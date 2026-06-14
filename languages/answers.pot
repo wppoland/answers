@@ -1,0 +1,262 @@
+# Copyright (C) 2026 WPPoland
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Answers - Product FAQs for WooCommerce 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/answers\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-14T14:14:44+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: answers\n"
+
+#. Plugin Name of the plugin
+#: answers.php
+msgid "Answers - Product FAQs for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: answers.php
+msgid "https://plogins.com/answers/"
+msgstr ""
+
+#. Description of the plugin
+#: answers.php
+msgid "Add per-product FAQs as an accessible accordion to reduce pre-sale questions."
+msgstr ""
+
+#. Author of the plugin
+#: answers.php
+msgid "WPPoland"
+msgstr ""
+
+#. Author URI of the plugin
+#: answers.php
+msgid "https://plogins.com/"
+msgstr ""
+
+#: answers.php:47
+msgid "Answers - Product FAQs for WooCommerce requires WooCommerce to be active."
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:47
+msgid "Add question"
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:51
+msgid "Drag is not required — questions render in the order listed. Leave a row blank to remove it on save. Answers accept basic HTML (links, lists, bold)."
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:70
+msgid "Question"
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:76
+msgid "e.g. What is your return policy?"
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:83
+msgid "Answer"
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:88
+msgid "Write a clear, concise answer. Basic HTML is allowed."
+msgstr ""
+
+#: src/Admin/FaqRepeater.php:93
+msgid "Remove this question"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:45
+#: src/Admin/GlobalFaqSets.php:55
+msgid "FAQ Sets"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:46
+msgid "FAQ Set"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:47
+msgid "Add New"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:48
+msgid "Add New FAQ Set"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:49
+msgid "Edit FAQ Set"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:50
+msgid "New FAQ Set"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:51
+msgid "View FAQ Set"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:52
+msgid "Search FAQ Sets"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:53
+msgid "No FAQ sets found."
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:54
+msgid "No FAQ sets found in Trash."
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:76
+msgid "Questions & Answers"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:85
+msgid "Where to show this set"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:110
+msgid "Products"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:117
+msgid "e.g. 12, 34, 56"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:119
+msgid "Comma-separated product IDs this set applies to."
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:122
+msgid "Product categories"
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:124
+msgid "The set also shows on every product in the checked categories."
+msgstr ""
+
+#: src/Admin/GlobalFaqSets.php:142
+msgid "No product categories yet."
+msgstr ""
+
+#: src/Admin/ProductFaqTab.php:45
+#: src/Admin/Settings.php:168
+#: src/Service/FaqRenderer.php:352
+msgid "FAQs"
+msgstr ""
+
+#: src/Admin/ProductFaqTab.php:65
+msgid "Add questions buyers ask before purchase. They render as an accessible accordion on the product page and can feed FAQ rich results."
+msgstr ""
+
+#: src/Admin/Settings.php:64
+msgid "Answers — Product FAQs"
+msgstr ""
+
+#: src/Admin/Settings.php:65
+msgid "Answers"
+msgstr ""
+
+#: src/Admin/Settings.php:102
+msgid "Answer buyer questions, right on the product page"
+msgstr ""
+
+#: src/Admin/Settings.php:104
+msgid "Add FAQs to a product in its \"FAQs\" data tab, or build reusable FAQ sets and assign them to products and categories. They render as an accessible, keyboard-friendly accordion — and can emit FAQ rich-result structured data."
+msgstr ""
+
+#: src/Admin/Settings.php:113
+msgid "Display"
+msgstr ""
+
+#: src/Admin/Settings.php:118
+msgid "Enable FAQs"
+msgstr ""
+
+#: src/Admin/Settings.php:119
+msgid "The master switch. When off, no FAQs render on the storefront and the FAQ stylesheet is not loaded — zero front-end impact."
+msgstr ""
+
+#: src/Admin/Settings.php:130
+msgid "Show product FAQs on the storefront."
+msgstr ""
+
+#: src/Admin/Settings.php:136
+msgid "Placement"
+msgstr ""
+
+#: src/Admin/Settings.php:137
+msgid "Choose a dedicated \"FAQs\" product-information tab, or render the accordion directly after the product summary (near the add-to-cart area)."
+msgstr ""
+
+#: src/Admin/Settings.php:144
+msgid "Product information tab"
+msgstr ""
+
+#: src/Admin/Settings.php:145
+msgid "After the product summary"
+msgstr ""
+
+#: src/Admin/Settings.php:158
+msgid "Tab title"
+msgstr ""
+
+#: src/Admin/Settings.php:159
+msgid "The label of the FAQ tab. Leave blank to use the default \"FAQs\". Only used with the tab placement."
+msgstr ""
+
+#: src/Admin/Settings.php:174
+msgid "Heading"
+msgstr ""
+
+#: src/Admin/Settings.php:175
+msgid "The heading shown above the accordion when rendered after the summary. Leave blank for the default \"Frequently asked questions\"."
+msgstr ""
+
+#: src/Admin/Settings.php:184
+#: src/Service/FaqRenderer.php:359
+msgid "Frequently asked questions"
+msgstr ""
+
+#: src/Admin/Settings.php:190
+msgid "First item open"
+msgstr ""
+
+#: src/Admin/Settings.php:191
+msgid "Start the accordion with its first question already expanded. Off keeps every item collapsed until clicked."
+msgstr ""
+
+#: src/Admin/Settings.php:202
+msgid "Expand the first question by default."
+msgstr ""
+
+#: src/Admin/Settings.php:211
+msgid "Search engine results"
+msgstr ""
+
+#: src/Admin/Settings.php:216
+msgid "FAQ structured data"
+msgstr ""
+
+#: src/Admin/Settings.php:217
+msgid "Outputs FAQPage schema.org JSON-LD for products that have FAQs, helping search engines understand your questions and answers. Only enable if these FAQs are genuinely visible on the page."
+msgstr ""
+
+#: src/Admin/Settings.php:228
+msgid "Emit FAQPage JSON-LD structured data."
+msgstr ""
+
+#. translators: %s: shortcode wrapped in <code>.
+#: src/Admin/Settings.php:238
+#, php-format
+msgid "Need FAQs somewhere else on the product page? Drop %s into a block or template to render the current product's FAQs."
+msgstr ""
+
+#: src/Admin/Settings.php:262
+msgid "More information"
+msgstr ""

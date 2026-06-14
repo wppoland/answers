@@ -1,0 +1,169 @@
+/**
+ * Answers — storefront FAQ accordion.
+ *
+ * Themeable via --answers-* custom properties. Disclosure panels toggle with a
+ * height/opacity transition that is disabled under prefers-reduced-motion. The
+ * panel uses the [hidden] attribute as the source of truth for state, so the
+ * accordion is fully usable before the (optional) enhancement script runs.
+ */
+
+.answers-faq {
+	--answers-accent: #2271b1;
+	--answers-border: #e2e4e7;
+	--answers-bg: #fff;
+	--answers-bg-hover: #f6f7f7;
+	--answers-fg: #1d2327;
+	--answers-muted: #50575e;
+	--answers-radius: 10px;
+	--answers-gap: 0.5rem;
+
+	margin-block: 1.5rem;
+	color: var(--answers-fg);
+}
+
+.answers-faq__heading {
+	margin: 0 0 1rem;
+	font-size: 1.4rem;
+	line-height: 1.2;
+}
+
+.answers-faq__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--answers-gap);
+}
+
+.answers-faq__item {
+	border: 1px solid var(--answers-border);
+	border-radius: var(--answers-radius);
+	background: var(--answers-bg);
+	overflow: clip;
+}
+
+.answers-faq__question {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+.answers-faq__trigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	inline-size: 100%;
+	margin: 0;
+	padding: clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2.5vw, 1.25rem);
+	border: 0;
+	background: transparent;
+	font: inherit;
+	font-weight: 600;
+	text-align: start;
+	color: inherit;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+.answers-faq__trigger:hover {
+	background: var(--answers-bg-hover);
+}
+
+.answers-faq__trigger:focus-visible {
+	outline: 2px solid var(--answers-accent);
+	outline-offset: -2px;
+}
+
+.answers-faq__trigger-text {
+	flex: 1 1 auto;
+}
+
+.answers-faq__icon {
+	flex: 0 0 auto;
+	position: relative;
+	inline-size: 0.85rem;
+	block-size: 0.85rem;
+	transition: transform 0.2s ease;
+}
+
+.answers-faq__icon::before,
+.answers-faq__icon::after {
+	content: "";
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 2px;
+	background: var(--answers-accent);
+	border-radius: 2px;
+	translate: 0 -50%;
+}
+
+.answers-faq__icon::after {
+	rotate: 90deg;
+	transition: rotate 0.2s ease, opacity 0.2s ease;
+}
+
+.answers-faq__trigger[aria-expanded="true"] .answers-faq__icon::after {
+	rotate: 0deg;
+	opacity: 0;
+}
+
+.answers-faq__panel {
+	border-block-start: 1px solid var(--answers-border);
+}
+
+.answers-faq__panel[hidden] {
+	display: none;
+}
+
+.answers-faq__answer {
+	padding: clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2.5vw, 1.25rem);
+	color: var(--answers-muted);
+	line-height: 1.6;
+}
+
+.answers-faq__answer > :first-child {
+	margin-block-start: 0;
+}
+
+.answers-faq__answer > :last-child {
+	margin-block-end: 0;
+}
+
+.answers-faq__answer a {
+	color: var(--answers-accent);
+}
+
+/* Smooth open/close when the enhancement script adds the animating class. */
+.answers-faq--animated .answers-faq__panel {
+	display: block;
+	overflow: clip;
+	block-size: 0;
+	opacity: 0;
+	transition: block-size 0.25s ease, opacity 0.2s ease;
+}
+
+.answers-faq--animated .answers-faq__panel.is-open {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.answers-faq__trigger,
+	.answers-faq__icon,
+	.answers-faq__icon::after,
+	.answers-faq--animated .answers-faq__panel {
+		transition: none;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.answers-faq {
+		--answers-border: #3c434a;
+		--answers-bg: #1d2327;
+		--answers-bg-hover: #2c3338;
+		--answers-fg: #f0f0f1;
+		--answers-muted: #c3c4c7;
+		--answers-accent: #72aee6;
+	}
+}
