@@ -13,29 +13,33 @@ Add per-product FAQs as an accessible accordion to reduce pre-sale questions.
 
 == Description ==
 
-Answers lets you add a frequently-asked-questions section to your WooCommerce
-products. Buyers get their pre-sale questions answered right on the product page —
-without contacting support — which lifts conversions and cuts ticket volume.
+Answers adds a frequently-asked-questions section to your WooCommerce products,
+so shoppers can read the common pre-sale questions on the product page instead of
+emailing to ask.
 
-Author FAQs in a "FAQs" tab inside the WooCommerce Product data panel with a
-simple question/answer repeater. They appear in a dedicated "FAQs" tab on the
-single product page.
+You write the FAQs in a "FAQs" tab inside the WooCommerce Product data panel using
+a question/answer repeater. They show up in their own "FAQs" tab on the single
+product page, next to Description and Reviews.
 
-FAQs render as an **accessible accordion**: each question is a real button with
-`aria-expanded` and an `aria`-controlled region, so it is keyboard operable and
-announced correctly by screen readers. Motion is disabled under
-`prefers-reduced-motion`, the markup never shifts layout, and the accordion is
-styled with modern CSS that adapts to light and dark themes.
+The front-end FAQs are an **accessible accordion**. Each question is a real
+`<button>` with `aria-expanded` controlling an `aria`-labelled region, so it works
+with the keyboard and is announced correctly by screen readers. Panels open and
+close with a height transition that is switched off under `prefers-reduced-motion`,
+the answer text stays reachable when JavaScript is off, and the styling follows the
+visitor's light or dark colour scheme.
+
+Source code and bug reports live on GitHub: https://github.com/wppoland/answers
 
 = Features =
 
-* Per-product FAQ items via a "FAQs" product data tab.
-* Accessible accordion (button + region, `aria-expanded`, keyboard operable, focus-visible).
-* Renders in a dedicated "FAQs" product-information tab, with a configurable tab label.
-* Answers accept basic HTML, filtered with `wp_kses_post`.
-* Light/dark aware styling, no layout shift, motion-reduced friendly.
-* Translation ready (POT included) and clean uninstall.
-* HPOS and cart/checkout blocks compatible.
+* Per-product FAQ items, authored in a "FAQs" product data tab.
+* Accordion built from a `<button>` plus an `aria`-labelled region: keyboard operable, visible focus ring, `aria-expanded` kept in sync.
+* Shows in its own "FAQs" product-information tab; the tab label is editable.
+* Answers accept basic HTML, sanitised with `wp_kses_post` on save and again on output.
+* CSS custom properties for theming, a dark-scheme palette, and motion that respects `prefers-reduced-motion`.
+* Front-end assets load only on product pages that actually have FAQs.
+* Translation ready (POT included), and removes its options on uninstall.
+* Declares HPOS and cart/checkout blocks compatibility.
 
 == Installation ==
 
