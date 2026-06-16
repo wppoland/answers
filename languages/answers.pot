@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T21:57:49+00:00\n"
+"POT-Creation-Date: 2026-06-16T20:23:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: answers\n"
@@ -72,7 +72,8 @@ msgid "Remove this question"
 msgstr ""
 
 #: src/Admin/ProductFaqTab.php:45
-#: src/Admin/Settings.php:128
+#: src/Admin/Settings.php:83
+#: src/Admin/Settings.php:135
 #: src/Service/FaqRenderer.php:193
 msgid "FAQs"
 msgstr ""
@@ -89,34 +90,52 @@ msgstr ""
 msgid "Answers"
 msgstr ""
 
-#: src/Admin/Settings.php:87
+#: src/Admin/Settings.php:91
 msgid "Answer buyer questions, right on the product page"
 msgstr ""
 
-#: src/Admin/Settings.php:89
+#: src/Admin/Settings.php:93
 msgid "Add FAQs to a product in its \"FAQs\" data tab. They render as an accessible, keyboard-friendly accordion in a \"FAQs\" tab on the product page."
 msgstr ""
 
-#: src/Admin/Settings.php:98
+#: src/Admin/Settings.php:102
 msgid "Display"
 msgstr ""
 
-#: src/Admin/Settings.php:102
+#: src/Admin/Settings.php:104
+msgid "Control whether the FAQ tab appears on product pages and what it is called. With FAQs enabled, any product that has FAQ items gets the tab automatically — no per-product setup beyond authoring the questions."
+msgstr ""
+
+#: src/Admin/Settings.php:109
 msgid "Enable FAQs"
 msgstr ""
 
-#: src/Admin/Settings.php:112
+#: src/Admin/Settings.php:119
 msgid "Show product FAQs on the storefront."
 msgstr ""
 
-#: src/Admin/Settings.php:114
+#: src/Admin/Settings.php:121
 msgid "When off, no FAQs render and the FAQ stylesheet is not loaded."
 msgstr ""
 
-#: src/Admin/Settings.php:119
+#: src/Admin/Settings.php:126
 msgid "Tab title"
 msgstr ""
 
-#: src/Admin/Settings.php:130
-msgid "The label of the FAQ tab on the product page. Leave blank to use \"FAQs\"."
+#. translators: %s: the tab label currently in effect, e.g. "FAQs".
+#: src/Admin/Settings.php:141
+#, php-format
+msgid "Sets the tab label shoppers see next to \"Description\" and \"Reviews\". Leave blank to use \"FAQs\". Currently showing: %s"
+msgstr ""
+
+#: src/Admin/Settings.php:152
+msgid "Preview — how the product-page tabs read:"
+msgstr ""
+
+#: src/Admin/Settings.php:154
+msgid "Description"
+msgstr ""
+
+#: src/Admin/Settings.php:156
+msgid "Reviews"
 msgstr ""

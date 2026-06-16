@@ -4,17 +4,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Answers - Product FAQs for WooCommerce 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/answers\n"
+"POT-Creation-Date: 2026-06-16T20:23:47+00:00\n"
+"PO-Revision-Date: 2026-06-15 00:00+0000\n"
 "Last-Translator: WPPoland <kontakt@wppoland.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T21:57:49+00:00\n"
-"PO-Revision-Date: 2026-06-15 00:00+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: answers\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
 
 #. Plugin Name of the plugin
 #: answers.php
@@ -28,8 +29,11 @@ msgstr "https://plogins.com/answers/"
 
 #. Description of the plugin
 #: answers.php
-msgid "Add per-product FAQs as an accessible accordion to reduce pre-sale questions."
-msgstr "Dodawaj najczęstsze pytania do każdego produktu w formie dostępnej harmonijki, aby ograniczyć pytania przed zakupem."
+msgid ""
+"Add per-product FAQs as an accessible accordion to reduce pre-sale questions."
+msgstr ""
+"Dodawaj najczęstsze pytania do każdego produktu w formie dostępnej "
+"harmonijki, aby ograniczyć pytania przed zakupem."
 
 #. Author of the plugin
 #: answers.php
@@ -42,16 +46,24 @@ msgid "https://plogins.com/"
 msgstr "https://plogins.com/"
 
 #: answers.php:47
-msgid "Answers - Product FAQs for WooCommerce requires WooCommerce to be active."
-msgstr "Answers - Najczęstsze pytania o produkcie dla WooCommerce wymaga aktywnego WooCommerce."
+msgid ""
+"Answers - Product FAQs for WooCommerce requires WooCommerce to be active."
+msgstr ""
+"Answers - Najczęstsze pytania o produkcie dla WooCommerce wymaga aktywnego "
+"WooCommerce."
 
 #: src/Admin/FaqRepeater.php:47
 msgid "Add question"
 msgstr "Dodaj pytanie"
 
 #: src/Admin/FaqRepeater.php:51
-msgid "Drag is not required — questions render in the order listed. Leave a row blank to remove it on save. Answers accept basic HTML (links, lists, bold)."
-msgstr "Przeciąganie nie jest wymagane — pytania wyświetlają się w podanej kolejności. Pozostaw wiersz pusty, aby usunąć go przy zapisie. Odpowiedzi obsługują podstawowy kod HTML (odnośniki, listy, pogrubienie)."
+msgid ""
+"Drag is not required — questions render in the order listed. Leave a row "
+"blank to remove it on save. Answers accept basic HTML (links, lists, bold)."
+msgstr ""
+"Przeciąganie nie jest wymagane — pytania wyświetlają się w podanej "
+"kolejności. Pozostaw wiersz pusty, aby usunąć go przy zapisie. Odpowiedzi "
+"obsługują podstawowy kod HTML (odnośniki, listy, pogrubienie)."
 
 #: src/Admin/FaqRepeater.php:70
 msgid "Question"
@@ -73,15 +85,18 @@ msgstr "Napisz jasną i zwięzłą odpowiedź. Dozwolony jest podstawowy kod HTM
 msgid "Remove this question"
 msgstr "Usuń to pytanie"
 
-#: src/Admin/ProductFaqTab.php:45
-#: src/Admin/Settings.php:128
-#: src/Service/FaqRenderer.php:193
+#: src/Admin/ProductFaqTab.php:45 src/Admin/Settings.php:83
+#: src/Admin/Settings.php:135 src/Service/FaqRenderer.php:193
 msgid "FAQs"
 msgstr "Najczęstsze pytania"
 
 #: src/Admin/ProductFaqTab.php:65
-msgid "Add questions buyers ask before purchase. They render as an accessible accordion on the product page."
-msgstr "Dodaj pytania, które kupujący zadają przed zakupem. Wyświetlają się jako dostępna harmonijka na stronie produktu."
+msgid ""
+"Add questions buyers ask before purchase. They render as an accessible "
+"accordion on the product page."
+msgstr ""
+"Dodaj pytania, które kupujący zadają przed zakupem. Wyświetlają się jako "
+"dostępna harmonijka na stronie produktu."
 
 #: src/Admin/Settings.php:49
 msgid "Answers — Product FAQs"
@@ -91,34 +106,71 @@ msgstr "Answers — Najczęstsze pytania o produkcie"
 msgid "Answers"
 msgstr "Answers"
 
-#: src/Admin/Settings.php:87
+#: src/Admin/Settings.php:91
 msgid "Answer buyer questions, right on the product page"
 msgstr "Odpowiadaj na pytania kupujących bezpośrednio na stronie produktu"
 
-#: src/Admin/Settings.php:89
-msgid "Add FAQs to a product in its \"FAQs\" data tab. They render as an accessible, keyboard-friendly accordion in a \"FAQs\" tab on the product page."
-msgstr "Dodawaj najczęstsze pytania do produktu w jego zakładce danych „Najczęstsze pytania”. Wyświetlają się jako dostępna, przyjazna dla klawiatury harmonijka w zakładce „Najczęstsze pytania” na stronie produktu."
+#: src/Admin/Settings.php:93
+msgid ""
+"Add FAQs to a product in its \"FAQs\" data tab. They render as an "
+"accessible, keyboard-friendly accordion in a \"FAQs\" tab on the product "
+"page."
+msgstr ""
+"Dodawaj najczęstsze pytania do produktu w jego zakładce danych „Najczęstsze "
+"pytania”. Wyświetlają się jako dostępna, przyjazna dla klawiatury harmonijka "
+"w zakładce „Najczęstsze pytania” na stronie produktu."
 
-#: src/Admin/Settings.php:98
+#: src/Admin/Settings.php:102
 msgid "Display"
 msgstr "Wyświetlanie"
 
-#: src/Admin/Settings.php:102
+#: src/Admin/Settings.php:104
+msgid ""
+"Control whether the FAQ tab appears on product pages and what it is called. "
+"With FAQs enabled, any product that has FAQ items gets the tab automatically "
+"— no per-product setup beyond authoring the questions."
+msgstr ""
+
+#: src/Admin/Settings.php:109
 msgid "Enable FAQs"
 msgstr "Włącz najczęstsze pytania"
 
-#: src/Admin/Settings.php:112
+#: src/Admin/Settings.php:119
 msgid "Show product FAQs on the storefront."
 msgstr "Wyświetlaj najczęstsze pytania o produkcie w sklepie."
 
-#: src/Admin/Settings.php:114
+#: src/Admin/Settings.php:121
 msgid "When off, no FAQs render and the FAQ stylesheet is not loaded."
-msgstr "Po wyłączeniu nie wyświetlają się żadne pytania, a arkusz stylów nie jest wczytywany."
+msgstr ""
+"Po wyłączeniu nie wyświetlają się żadne pytania, a arkusz stylów nie jest "
+"wczytywany."
 
-#: src/Admin/Settings.php:119
+#: src/Admin/Settings.php:126
 msgid "Tab title"
 msgstr "Tytuł zakładki"
 
-#: src/Admin/Settings.php:130
-msgid "The label of the FAQ tab on the product page. Leave blank to use \"FAQs\"."
-msgstr "Etykieta zakładki z pytaniami na stronie produktu. Pozostaw puste, aby użyć „Najczęstsze pytania”."
+#. translators: %s: the tab label currently in effect, e.g. "FAQs".
+#: src/Admin/Settings.php:141
+#, php-format
+msgid ""
+"Sets the tab label shoppers see next to \"Description\" and \"Reviews\". "
+"Leave blank to use \"FAQs\". Currently showing: %s"
+msgstr ""
+
+#: src/Admin/Settings.php:152
+msgid "Preview — how the product-page tabs read:"
+msgstr ""
+
+#: src/Admin/Settings.php:154
+msgid "Description"
+msgstr ""
+
+#: src/Admin/Settings.php:156
+msgid "Reviews"
+msgstr ""
+
+#~ msgid ""
+#~ "The label of the FAQ tab on the product page. Leave blank to use \"FAQs\"."
+#~ msgstr ""
+#~ "Etykieta zakładki z pytaniami na stronie produktu. Pozostaw puste, aby "
+#~ "użyć „Najczęstsze pytania”."
