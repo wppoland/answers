@@ -78,6 +78,10 @@ final class Settings implements HasHooks
         }
 
         $settings = $this->settings();
+
+        $tabTitle      = trim((string) ($settings['tab_title'] ?? ''));
+        $defaultTitle  = __('FAQs', 'answers');
+        $effectiveTitle = $tabTitle !== '' ? $tabTitle : $defaultTitle;
         ?>
         <div class="wrap answers-admin">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -96,6 +100,9 @@ final class Settings implements HasHooks
 
                 <div class="answers-card">
                     <h2><?php esc_html_e('Display', 'answers'); ?></h2>
+                    <p class="answers-card__desc">
+                        <?php esc_html_e('Control whether the FAQ tab appears on product pages and what it is called. With FAQs enabled, any product that has FAQ items gets the tab automatically — no per-product setup beyond authoring the questions.', 'answers'); ?>
+                    </p>
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
@@ -127,11 +134,28 @@ final class Settings implements HasHooks
                                         class="regular-text"
                                         placeholder="<?php esc_attr_e('FAQs', 'answers'); ?>"
                                     />
-                                    <p class="description"><?php esc_html_e('The label of the FAQ tab on the product page. Leave blank to use "FAQs".', 'answers'); ?></p>
+                                    <p class="description">
+                                        <?php
+                                        printf(
+                                            /* translators: %s: the tab label currently in effect, e.g. "FAQs". */
+                                            esc_html__('Sets the tab label shoppers see next to "Description" and "Reviews". Leave blank to use "FAQs". Currently showing: %s', 'answers'),
+                                            '<strong>' . esc_html($effectiveTitle) . '</strong>',
+                                        );
+                                        ?>
+                                    </p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="answers-preview" aria-hidden="true">
+                        <p class="answers-preview__caption"><?php esc_html_e('Preview — how the product-page tabs read:', 'answers'); ?></p>
+                        <ul class="answers-preview__tabs">
+                            <li class="answers-preview__tab"><?php esc_html_e('Description', 'answers'); ?></li>
+                            <li class="answers-preview__tab answers-preview__tab--active"><?php echo esc_html($effectiveTitle); ?></li>
+                            <li class="answers-preview__tab"><?php esc_html_e('Reviews', 'answers'); ?></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <?php submit_button(); ?>
