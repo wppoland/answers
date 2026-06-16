@@ -1,17 +1,29 @@
 /**
  * Answers — storefront FAQ accordion.
  *
- * Themeable via --answers-* custom properties. Disclosure panels toggle with a
- * height/opacity transition that is disabled under prefers-reduced-motion. The
- * panel uses the [hidden] attribute as the source of truth for state, so the
- * accordion is fully usable before the (optional) enhancement script runs.
+ * Themeable via --answers-* custom properties (each falls back to a sensible
+ * default, so a theme can re-skin the accordion by setting just one token).
+ * Disclosure panels toggle with a height/opacity transition that is disabled
+ * under prefers-reduced-motion. The panel uses the [hidden] attribute as the
+ * source of truth for state, so the accordion is fully usable before the
+ * (optional) enhancement script runs.
+ *
+ * Craft moment — the "highlighter sweep": this plugin's whole job is handing a
+ * shopper the answer to their question. So the instant a question opens, a
+ * translucent marigold highlighter band wipes once across the answer, the way
+ * you'd reach into a manual and highlight the line that settles the question.
+ * The closed marker is a quiet "?" that resolves to a calm dot once answered.
+ * One earned motion; restraint everywhere else.
  */
 
 .answers-faq {
-	--answers-accent: #2271b1;
-	--answers-border: #e2e4e7;
+	/* Marigold highlighter — the colour of marking the answer in a manual. */
+	--answers-accent: #b45309;
+	--answers-accent-ink: #92400e;
+	--answers-highlight: rgba(245, 158, 11, 0.32);
+	--answers-border: #e7e2d9;
 	--answers-bg: #fff;
-	--answers-bg-hover: #f6f7f7;
+	--answers-bg-hover: #fbf7f0;
 	--answers-fg: #1d2327;
 	--answers-muted: #50575e;
 	--answers-radius: 10px;
@@ -72,35 +84,38 @@
 	flex: 1 1 auto;
 }
 
+/*
+ * The marker reads as a question, not a control. Closed: a "?" in the accent
+ * ink, ringed like a margin note. Open: the ring fills and a "?" gives way to a
+ * settled dot — the question, answered.
+ */
 .answers-faq__icon {
 	flex: 0 0 auto;
-	position: relative;
-	inline-size: 0.85rem;
-	block-size: 0.85rem;
-	transition: transform 0.2s ease;
+	display: grid;
+	place-items: center;
+	inline-size: 1.5rem;
+	block-size: 1.5rem;
+	border: 1.5px solid var(--answers-accent);
+	border-radius: 50%;
+	color: var(--answers-accent);
+	font-size: 0.95rem;
+	font-weight: 700;
+	line-height: 1;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.answers-faq__icon::before,
-.answers-faq__icon::after {
-	content: "";
-	position: absolute;
-	inset-block-start: 50%;
-	inset-inline-start: 0;
-	inline-size: 100%;
-	block-size: 2px;
+.answers-faq__icon::before {
+	content: "?";
+}
+
+.answers-faq__trigger[aria-expanded="true"] .answers-faq__icon {
 	background: var(--answers-accent);
-	border-radius: 2px;
-	translate: 0 -50%;
+	border-color: var(--answers-accent);
+	color: #fff;
 }
 
-.answers-faq__icon::after {
-	rotate: 90deg;
-	transition: rotate 0.2s ease, opacity 0.2s ease;
-}
-
-.answers-faq__trigger[aria-expanded="true"] .answers-faq__icon::after {
-	rotate: 0deg;
-	opacity: 0;
+.answers-faq__trigger[aria-expanded="true"] .answers-faq__icon::before {
+	content: "\2022"; /* settled dot — question resolved */
 }
 
 .answers-faq__panel {
@@ -112,6 +127,7 @@
 }
 
 .answers-faq__answer {
+	position: relative;
 	padding: clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2.5vw, 1.25rem);
 	color: var(--answers-muted);
 	line-height: 1.6;
@@ -126,7 +142,27 @@
 }
 
 .answers-faq__answer a {
-	color: var(--answers-accent);
+	color: var(--answers-accent-ink);
+	text-decoration-color: var(--answers-highlight);
+	text-underline-offset: 2px;
+}
+
+/*
+ * The highlighter sweep. A translucent marigold band sits over the answer and
+ * wipes once, left to right, when the panel opens — then clears, leaving the
+ * answer plainly legible. Purely decorative, never intercepts pointer events.
+ */
+.answers-faq__answer::before {
+	content: "";
+	position: absolute;
+	inset: clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2.5vw, 1.25rem) auto;
+	block-size: 1.5em;
+	background: var(--answers-highlight);
+	border-radius: 2px;
+	transform-origin: left center;
+	scale: 0 1;
+	opacity: 0;
+	pointer-events: none;
 }
 
 /* Smooth open/close when the enhancement script adds the animating class. */
@@ -142,22 +178,51 @@
 	opacity: 1;
 }
 
+/* Fire the sweep once each time a panel opens. */
+.answers-faq--animated .answers-faq__panel.is-open .answers-faq__answer::before {
+	animation: answers-highlight 0.62s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s both;
+}
+
+@keyframes answers-highlight {
+	0% {
+		scale: 0 1;
+		opacity: 0.9;
+	}
+	55% {
+		scale: 1 1;
+		opacity: 0.9;
+	}
+	100% {
+		scale: 1 1;
+		opacity: 0;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.answers-faq__trigger,
 	.answers-faq__icon,
-	.answers-faq__icon::after,
 	.answers-faq--animated .answers-faq__panel {
 		transition: none;
+	}
+
+	.answers-faq--animated .answers-faq__panel.is-open .answers-faq__answer::before {
+		animation: none;
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	.answers-faq {
+		--answers-accent: #f4a13c;
+		--answers-accent-ink: #fbbf60;
+		--answers-highlight: rgba(245, 158, 11, 0.26);
 		--answers-border: #3c434a;
 		--answers-bg: #1d2327;
-		--answers-bg-hover: #2c3338;
+		--answers-bg-hover: #2a2f35;
 		--answers-fg: #f0f0f1;
 		--answers-muted: #c3c4c7;
-		--answers-accent: #72aee6;
+	}
+
+	.answers-faq__trigger[aria-expanded="true"] .answers-faq__icon {
+		color: #1d2327;
 	}
 }
