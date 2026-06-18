@@ -18,6 +18,7 @@ final class FaqItem
     public function __construct(
         public readonly string $question,
         public readonly string $answer,
+        public readonly string $key,
     ) {
     }
 }

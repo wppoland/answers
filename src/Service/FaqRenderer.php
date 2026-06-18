@@ -97,7 +97,7 @@ final class FaqRenderer implements HasHooks
             return;
         }
 
-        echo $this->renderAccordion($items); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renderAccordion escapes every value.
+        echo $this->renderAccordion($items, $this->currentProductId()); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renderAccordion escapes every value.
     }
 
     /**
@@ -105,19 +105,19 @@ final class FaqRenderer implements HasHooks
      *
      * @param list<FaqItem> $items
      */
-    private function renderAccordion(array $items): string
+    private function renderAccordion(array $items, int $productId): string
     {
         $instance = wp_unique_id('answers-faq-');
 
         ob_start();
         ?>
-        <div class="answers-faq" data-answers-faq>
+        <div class="answers-faq" data-answers-faq data-product-id="<?php echo esc_attr((string) $productId); ?>">
             <div class="answers-faq__list">
                 <?php foreach ($items as $index => $item) :
                     $panelId  = $instance . '-panel-' . $index;
                     $buttonId = $instance . '-button-' . $index;
                     ?>
-                    <div class="answers-faq__item">
+                    <div class="answers-faq__item" data-faq-key="<?php echo esc_attr($item->key); ?>">
                         <h3 class="answers-faq__question">
                             <button
                                 type="button"
@@ -140,6 +140,16 @@ final class FaqRenderer implements HasHooks
                             <div class="answers-faq__answer">
                                 <?php echo wp_kses_post(wpautop($item->answer)); ?>
                             </div>
+                            <?php
+                            /**
+                             * Fires after a single FAQ answer is rendered.
+                             *
+                             * @param int     $productId Product post ID.
+                             * @param int     $index     Zero-based FAQ index.
+                             * @param FaqItem $item      FAQ item being rendered.
+                             */
+                            do_action('answers/faq_after_answer', $productId, $index, $item);
+                            ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -163,7 +173,7 @@ final class FaqRenderer implements HasHooks
             return [];
         }
 
-        return $this->repository->forProduct($productId);
+        return apply_filters('answers/faq_items', $this->repository->forProduct($productId), $productId);
     }
 
     private function currentProductId(): int

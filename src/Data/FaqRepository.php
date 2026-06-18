@@ -52,7 +52,7 @@ final class FaqRepository
             }
 
             $seen[$key] = true;
-            $items[]    = new FaqItem($question, $answer);
+            $items[]    = new FaqItem($question, $answer, md5($key));
 
             if (count($items) >= self::MAX_ITEMS) {
                 break;

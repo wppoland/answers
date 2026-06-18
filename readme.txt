@@ -4,7 +4,7 @@ Tags: woocommerce, faq, product faq, accordion
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,10 @@ meta and plugin settings in the `answers_settings` option (with a schema marker
 in `answers_db_version`). Nothing is sent off-site, and the plugin sends no email.
 
 == Changelog ==
+
+= 0.1.1 =
+* Extension hooks for Answers Pro voting: stable FAQ keys, `answers/faq_items`,
+  and `answers/faq_after_answer`.
 
 = 0.1.0 =
 * Initial release: per-product FAQs and an accessible accordion in a "FAQs" product tab.
