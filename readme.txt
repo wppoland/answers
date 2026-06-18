@@ -30,6 +30,15 @@ visitor's light or dark colour scheme.
 
 Source code and bug reports live on GitHub: https://github.com/wppoland/answers
 
+= Documentation and links =
+
+* **Documentation** - https://plogins.com/answers/docs/
+* **Plugin page** - https://plogins.com/answers/
+* **Source code** - https://github.com/wppoland/answers
+* **Bug reports and feature requests** - https://github.com/wppoland/answers/issues
+* **Discussions and questions** - https://github.com/wppoland/answers/discussions
+
+
 = Features =
 
 * Per-product FAQ items, authored in a "FAQs" product data tab.
