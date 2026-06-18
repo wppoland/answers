@@ -1,5 +1,5 @@
 === Answers - Product FAQs for WooCommerce ===
-Contributors: wppoland
+Contributors: motylanogha
 Tags: woocommerce, faq, product faq, accordion
 Requires at least: 6.5
 Tested up to: 7.0
