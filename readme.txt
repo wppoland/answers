@@ -79,6 +79,11 @@ Basic HTML allowed by `wp_kses_post` (links, lists, emphasis). Scripts are strip
 
 No. CSS and JS load only on products that have at least one FAQ saved.
 
+
+= Does this plugin work on WordPress Multisite? =
+
+Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
+
 == Screenshots ==
 
 1. The FAQ accordion on a product page.
