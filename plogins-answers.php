@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Plogins Answers - Product Q for WooCommerceA for WooCommerce
+ * Plugin Name:       Plogins Answers - Product Q&A for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-answers/
  * Description:        Add per-product FAQs as an accessible accordion to reduce pre-sale questions.
  * Version:           0.1.3
